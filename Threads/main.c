@@ -1,9 +1,9 @@
 
 #include "header.h"
+#define MAX_COUNT 1000
 pthread_cond_t      condA  = PTHREAD_COND_INITIALIZER;
 pthread_cond_t      condB  = PTHREAD_COND_INITIALIZER;
 pthread_mutex_t     mutex = PTHREAD_MUTEX_INITIALIZER;
-#define MAX_COUNT 1000
 int exit_flag;
 int count = 1;
 
@@ -54,7 +54,6 @@ int main()
 {
     int n, ret;
     pthread_t odd, even;
-    const pthread_attr_t detach;
 
     ret = pthread_create(&odd, NULL, print_odd, NULL);
     if (ret)
